@@ -2,4 +2,9 @@
 
 ## Decisions
 
-- [[approved defaults]]
+- [x] [[approved defaults]]
+
+## Auth
+
+- [ ] [[login-flow]]
+- [ ] [[current-user-state]]

@@ -1,4 +1,10 @@
+
 # Frontend Playbook
+
+> ** **
+> 📍 **Playbook is not for showing.**
+> 📍 **Playbook is for thinking.**
+> ** **
 
 Personal playbook for structuring frontend work, patterns, desisions, and reusable snippets.
 
