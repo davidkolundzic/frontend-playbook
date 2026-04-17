@@ -1,0 +1,5 @@
+# Index
+
+## Decisions
+
+- [[approved defaults]]
