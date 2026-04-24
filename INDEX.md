@@ -7,6 +7,7 @@
 ## Decisions & Defaults
 
 | Topic | Status |
+
 |---|---|
 | [Approved Defaults](06-decisions/approved%20defaults.md) | APPROVED |
 
@@ -15,21 +16,28 @@
 ## Patterns
 
 ### Auth
+
 | Pattern | Status |
+
 |---|---|
 | [Login Flow](02-patterns/auth/login%20flow.md) | APPROVED |
 | [Current User State](02-patterns/auth/current%20user%20state.md) | APPROVED |
 | [Auth Guard (Functional)](02-patterns/auth/Auth%20Guard.md) | APPROVED |
 
 ### Data Fetching
+
 | Pattern | Status |
+
 |---|---|
-| [HttpClient Service Layer](02-patterns/data-fetching/) | APPROVED |
-| [httpResource vs rxResource](02-patterns/data-fetching/) | UNDER EVALUATION |
-| [Loading / Error / Empty State](02-patterns/data-fetching/) | APPROVED |
+| [HttpClient — Service → Store → Component](02-patterns/data-fetching/httpclient-service-store-component.md) | APPROVED |
+| [Loading / Error / Empty State](02-patterns/data-fetching/loading-error-empty-state.md) | APPROVED |
+| [HttpClient vs httpResource vs rxResource](02-patterns/data-fetching/httpclient-vs-httpresource-vs-rxresource.md) | UNDER EVALUATION |
+| [HttpClient + Signals (full deep-dive)](02-patterns/data-fetching/HttpClient%20+%20Signals%20Pattern.md) | APPROVED |
 
 ### State
+
 | Pattern | Status |
+
 |---|---|
 | [Service → Store → Component](04-state/) | APPROVED |
 | [When to Use a Signal Store](04-state/) | APPROVED |

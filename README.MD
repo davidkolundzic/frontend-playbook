@@ -9,6 +9,7 @@ Opinionated. Practical. Built from real projects.
 ## Stack Defaults
 
 | Concern | Decision |
+
 |---|---|
 | Angular version | 21 (standalone, zoneless) |
 | State | Signals (`signal`, `computed`, `effect`) |
@@ -25,7 +26,7 @@ Opinionated. Practical. Built from real projects.
 
 ## Structure
 
-```
+'''
 01-principles/     Engineering principles and non-negotiables
 02-patterns/       Reusable implementation patterns (auth, data-fetching, forms)
 03-snippets/       Copy-paste ready code
@@ -33,7 +34,6 @@ Opinionated. Practical. Built from real projects.
 05-checklists/     Feature and demo launch checklists
 06-decisions/      Approved defaults and ADRs
 07-templates/      Blank templates for new patterns and comparisons
-```
 
 ---
 
@@ -49,7 +49,9 @@ Opinionated. Practical. Built from real projects.
 ## Decision Status Labels
 
 | Label | Meaning |
+
 |---|---|
+
 | `APPROVED` | Default choice — use this unless there's a reason not to |
 | `SITUATIONAL` | Valid in specific contexts, documented inline |
 | `UNDER EVALUATION` | Being assessed — do not use in production |

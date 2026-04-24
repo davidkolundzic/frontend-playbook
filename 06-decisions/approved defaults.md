@@ -164,7 +164,7 @@ export class UserService {
 
 **Avoid when:** Purely local UI state (a toggle, a selected tab) — keep it in the component signal.
 
-```
+```text
 UserService          — HttpClient calls, returns Observable<T>
     ↓
 UserStore            — signal state, computed values, calls service
