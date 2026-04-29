@@ -1,1 +1,24 @@
+# --- Drafts: kept locally, never published to the public repo ---
+# Naming convention for ad-hoc local-only notes
+*.draft.md
 
+# Folder convention for any larger private workspace
+_drafts/
+
+# Explicit DRAFT files (current placeholders not yet ready for public)
+02-patterns/auth/auth guard.md
+02-patterns/auth/current user state.md
+02-patterns/auth/login flow.md
+05-checklists/new demo checklist.md
+07-templates/comparison template.md
+07-templates/feature template.md
+07-templates/pattern template.md
+
+# --- Standard noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+node_modules/

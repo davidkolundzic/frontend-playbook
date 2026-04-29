@@ -10,6 +10,7 @@
 
 |---|---|
 | [Approved Defaults](06-decisions/approved%20defaults.md) | APPROVED |
+| [Decision Tree — State & Async](06-decisions/decision-tree.md) | APPROVED |
 
 ---
 
@@ -17,12 +18,7 @@
 
 ### Auth
 
-| Pattern | Status |
-
-|---|---|
-| [Login Flow](02-patterns/auth/login%20flow.md) | APPROVED |
-| [Current User State](02-patterns/auth/current%20user%20state.md) | APPROVED |
-| [Auth Guard (Functional)](02-patterns/auth/Auth%20Guard.md) | APPROVED |
+> Pattern documents for Login Flow, Current User State, and Auth Guard are local-only drafts and not published yet. Until they land, see [Approved Defaults §4 — Auth Guards](06-decisions/approved%20defaults.md).
 
 ### Data Fetching
 
@@ -54,12 +50,9 @@
 ## Checklists
 
 - [New Feature Checklist](05-checklists/new%20feature%20checklist.md)
-- [New Demo Checklist](05-checklists/new%20demo%20checklist.md)
 
 ---
 
 ## Templates
 
-- [Pattern Template](07-templates/pattern%20template.md) — for documenting a new pattern
-- [Comparison Template](07-templates/comparison%20template.md) — for evaluating two approaches
-- [Feature Template](07-templates/feature%20template.md) — for scoping a new feature
+> Templates are tracked locally and not yet published.

@@ -291,3 +291,90 @@ test('user can log in and reach dashboard', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible();
 });
 ```
+
+---
+
+## 11. Signal Forms
+
+**Status:** `GOOD TO KNOW, NOT DEFAULT`
+
+**Decision:** Track signal-based forms, but keep typed Reactive Forms (§5) as the default for any form that ships.
+
+**Use when:** Spikes and prototypes. Internal tools where a future API rename is acceptable.
+
+**Avoid when:** Production features, validation-heavy flows, anything that will be reused across teams. The API is still in preview and will likely change before stabilising.
+
+> When the preview marker is removed in a future Angular release, revisit this section and §5.
+
+---
+
+## 12. RxJS — Use Intentionally
+
+**Status:** `APPROVED` (situational)
+
+**Decision:** RxJS stays in the toolbox. It is not the default for state, but it is the default for streams.
+
+**Use when:**
+
+- Async stream composition (combine two endpoints, coordinate sequence)
+- Debouncing and throttling (search-as-you-type)
+- Cancellation pipelines (`switchMap`, `takeUntil`)
+- Retry with backoff (`retry({ delay })`)
+- WebSocket / SSE / any genuinely live stream
+- Any place where signal + `effect()` would reinvent an operator that already exists
+
+**Avoid when:**
+
+- "Current value + setter" — that is a `signal()`
+- Loading / error / data triple — model as three signals (see [Loading / Error / Empty State](../02-patterns/data-fetching/loading-error-empty-state.md))
+- Plain derived value — that is `computed()`
+
+> RxJS is powerful when the problem is a stream. It is overkill when the problem is just state.
+
+---
+
+## 13. Resource APIs (`httpResource` / `rxResource` / `resource`)
+
+**Status:** `GOOD TO KNOW, NOT DEFAULT`
+
+**Decision:** Keep `HttpClient` + Service → Store → Component (§6, §7) as the production default. The resource APIs are tracked, used in sandboxes and pilots, but not the default for a shipping feature.
+
+**Use when:**
+
+- Smaller read-only screens in a sandbox or internal tool
+- Signal-first experiments where the URL is derived from a signal
+- A pilot module inside a production app, with the resource hidden behind a Store that re-exports plain signals (the public surface stays stable even if the experimental API changes)
+
+**Avoid when:**
+
+- Larger business features
+- Anywhere portability across projects matters — the API is experimental in Angular 21
+- Endpoints that need interceptors and you are reaching for `resource()` (it bypasses them)
+
+See the full decision tree in [decision-tree.md §3 and §5](decision-tree.md) and the comparison in [HttpClient vs httpResource vs rxResource vs resource](../02-patterns/data-fetching/httpclient-vs-httpresource-vs-rxresource.md).
+
+---
+
+## Architectural Decision Rule
+
+If I am not sure, I start with the approved default and only deviate with a clear reason.
+
+**Clear reasons to deviate:**
+
+- Team standard is different
+- Feature is unusually small or simple
+- A different pattern genuinely reduces complexity
+- A project constraint matters more than personal preference
+
+If none of those apply, the default wins.
+
+---
+
+## Summary
+
+The default mindset:
+
+- Keep architecture simple
+- Keep responsibilities clear
+- Avoid random variation
+- Prefer reusable patterns over improvisation
